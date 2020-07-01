@@ -1,0 +1,20 @@
+{
+    "data":{
+        "value_transaction":{
+            "var": "value_transaction",
+            "label": "Ingrese un valor en peso (COP)",
+            "value": "",
+            "type":"dataTransaction",
+            "validate": true
+        },
+        "numberAccount_transaction":{
+            "var": "numberAccount_transaction",
+            "label": "Numero de cuenta Asociada",
+            "value": "",
+            "type":"dataTransaction",
+            "validate": true
+        }
+        
+    },
+"errors":{}
+}

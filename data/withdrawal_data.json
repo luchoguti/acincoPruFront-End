@@ -1,0 +1,19 @@
+{
+    "data":{
+        "value_transaction":{
+            "var": "value_transaction",
+            "label": "Valor a retirar",
+            "value": "",
+            "type":"userBasicData",
+            "validate": true
+        },
+        "password_account":{
+            "var": "password_account",
+            "label": "Digite su contraseña",
+            "value": "",
+            "type":"userBasicData",
+            "validate": true
+        }
+    },
+"errors":{}
+}

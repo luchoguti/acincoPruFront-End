@@ -1,0 +1,62 @@
+{
+    "data":{
+        "number_account":{
+            "var": "number_account",
+            "label": "Numero de cuenta",
+            "value": "",
+            "type":"dataAccount",
+            "validate": true
+        },
+        "name_cart_holder":{
+            "var": "name_cart_holder",
+            "label": "Nombre de Titular",
+            "value": "",
+            "type":"dataAccount",
+            "validate": true
+        },
+        "type_document":{
+            "var": "type_document",
+            "label": "tipo de documento",
+            "value": "",
+            "type":"dataAccount",
+            "validate": true
+        },
+        "number_identification":{
+            "var": "number_identification",
+            "label": "Numero de identificacion",
+            "value": "",
+            "type":"dataAccount",
+            "validate": true
+        },
+        "bank":{
+            "var": "bank",
+            "label": "Banco",
+            "value": "",
+            "type":"dataAccount",
+            "validate": true
+        },
+        "type_account":{
+            "var": "type_account",
+            "label": "Tipo de Cuenta",
+            "value": "",
+            "type":"dataAccount",
+            "validate": true
+        },
+        "password_account":{
+            "var": "password_account",
+            "label": "Contaseña de Cuenta",
+            "value": "",
+            "type":"dataAccount",
+            "validate": true
+        },
+        "id_accounts":{
+            "var": "id_accounts",
+            "label": "",
+            "value": "",
+            "type":"dataAccount",
+            "validate": false
+        }
+
+    },
+"errors":{}
+}

@@ -1,0 +1,41 @@
+{
+    "data":
+    [
+        {
+            "name_menu": "Retiros",
+            "page":"",
+            "event":1,
+            "icon":"fa fa-cc-diners-club"
+        },
+        {
+            "name_menu": "Consignaciones",
+            "page":"",
+            "event":2,
+            "icon":"fa fa-credit-card-alt"
+        },
+        {
+            "name_menu": "Transferencia",
+            "page":"",
+            "event":3,
+            "icon":"fa fa-exchange"
+        },
+        {
+            "name_menu": "Donaciones",
+            "page":"",
+            "event":4,
+            "icon":"fa fa-cube"
+        },
+        {
+            "name_menu": "Consultas",
+            "page":"",
+            "event":5,
+            "icon":"fa fa-search-plus"
+        },
+        {
+            "name_menu": "Cuentas",
+            "page":"",
+            "event":6,
+            "icon":"fa fa-money"
+        }
+    ]
+}
