@@ -8,7 +8,6 @@ import Router from 'next/router'
 import { methodRequet,valideNumbersOnly,isEmpty,reStartDataInit } from '../utils';
 
 const FormTrasaction = (props) =>{
-    console.log(props);
     const [dataForm, setTransaction] = useState(
         dataTransaction
     );
