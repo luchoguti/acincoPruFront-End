@@ -8,6 +8,7 @@ import Router from 'next/router'
 import { methodRequet,valideNumbersOnly,isEmpty,reStartDataInit } from '../utils';
 
 const FormTrasaction = (props) =>{
+    console.log(props);
     const [dataForm, setTransaction] = useState(
         dataTransaction
     );
@@ -49,20 +50,21 @@ const FormTrasaction = (props) =>{
             if(dataBalance.balance > data.value_transaction.value){
                 setShowProgress(true);
                 let newBalance = dataBalance.balance - data.value_transaction.value;
+                let positionData = data.numberAccount_transaction.value - 1;
                 let dataMoveContable = {
                     "value_transaction":data.value_transaction.value,
-                    "accounts_addressee":props.actToAct[data.numberAccount_transaction.value]['account_association'],
+                    "accounts_addressee":props.actToAct[positionData]['account_association'],
                     "type_transaction": props.optTypeTrans,
                     "balance":newBalance,
                     "id_balance":dataBalance.id_balances
                 }
                 await finishTransaction(dataMoveContable);
-                if(props.actToAct[data.numberAccount_transaction.value]['banks'] != props.id_banks){
+                if(props.actToAct[positionData]['banks'] != props.id_banks){
                     alert('Esta transaccion tiene cobro!');
                     let newBalanceTwo = newBalance - 5000;
                     let dataMoveContable = {
                         "value_transaction":5000,
-                        "accounts_addressee":props.actToAct[data.numberAccount_transaction.value]['account_association'],
+                        "accounts_addressee":props.actToAct[positionData]['account_association'],
                         "type_transaction": 5,
                         "balance":newBalanceTwo,
                         "id_balance":dataBalance.id_balances
