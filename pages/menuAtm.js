@@ -86,11 +86,22 @@ const MenuPrincipal = (props) =>{
             break;
         }
     }
+
+    const goToMenuAtm = () =>{
+        Router.push({
+            pathname: '/',
+            query: props.qureryURL
+        });
+    }
+
     return (
         <InitPage>
             <Container>
-                <Alert variant="dark">
+                <Alert variant="dark" className="d-flex justify-content-around">
                     <h4>Cuenta #{account.number_account}#</h4>
+                    <button onClick={goToMenuAtm} type="button" className="btn btn-outline-info">
+                        <i className="fa fa-bars" aria-hidden="true"></i>
+                    </button>
                 </Alert>
             </Container>
             <Container className="p-1">
