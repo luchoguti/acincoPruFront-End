@@ -76,6 +76,15 @@ class WithDrawal extends React.Component {
         }, 3000);
 
     }
+    clearData = () =>{
+        const  dataNew  = { ...this.state.data };
+        dataNew["value_transaction"]["value"] = "";
+        dataNew["password_account"]["value"] = "";
+        this.setState({
+            data: dataNew
+        })
+    }
+
     verificationBalancePartOne = (e) =>{
         let validate = multiplesFourValidate(this.state.data.value_transaction.value);
         let newErros = this.state.errors;
@@ -152,10 +161,13 @@ class WithDrawal extends React.Component {
                         'balance':this.state.balance,
                         'id_accounts': idAccount
                     }
-                    methodRequet(dataBalance,'balance/','PUT',this.state.id_balance);
+                    let sendBalance = methodRequet(dataBalance,'balance/','PUT',this.state.id_balance);
                     Router.push({
                         pathname: '/'
                     });
+                    if(sendBalance){
+                        this.clearData(dataBalance);
+                    }
                 }
             });
         }, 3000);

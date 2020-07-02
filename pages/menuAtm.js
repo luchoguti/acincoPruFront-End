@@ -18,8 +18,13 @@ const MenuPrincipal = (props) =>{
     const goToWithdrawals = async ()=>{
         setShowProgress(true);
         let queryData = {
-            'account': account.id_accounts,
-            'atm': props.atm.id_atm
+            'id_accounts': account.id_accounts,
+            'number_account': account.number_account,
+            'name_bank': account.name_bank,
+            'id_banks': account.id_banks,
+            'optionTrasaction': 0,
+            'atm': props.atm.id_atm,
+            'optTypeTrans': 1
         }
         Router.push({
             pathname: '/withDrawal',
