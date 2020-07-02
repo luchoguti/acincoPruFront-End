@@ -17,6 +17,7 @@ const Donation = (props) => {
                 atm={props.atm}
                 optTypeTrans={props.optTypeTrans}
                 id_banks={props.id_banks}
+                qureryURL={props.qureryURL}
             />
         </InitPage>
     )
@@ -26,19 +27,20 @@ Donation.getInitialProps = async (ctx) => {
     const response = await fetch(`${API_BASE_URL}/bank`);
     const dataResp = await response.json();
 
-    const respAccountToAccount = await fetch(`${API_BASE_URL}/accountToAccount/${ctx.query.account}`);
+    const respAccountToAccount = await fetch(`${API_BASE_URL}/accountToAccount/${ctx.query.id_accounts}`);
     const dataRespAcToAc = await respAccountToAccount.json();
     const nameTra = dataMenu.data[ctx.query.optionTrasaction].name_menu;
     return {
         banks:dataResp,
         actToAct:dataRespAcToAc,
         nameTransac:nameTra,
-        id_account:ctx.query.account,
+        id_account:ctx.query.id_accounts,
         number_account:ctx.query.number_account,
         name_bank:ctx.query.name_bank,
         atm:ctx.query.atm,
         optTypeTrans: ctx.query.optTypeTrans,
-        id_banks:ctx.query.id_banks
+        id_banks:ctx.query.id_banks,
+        qureryURL: ctx.query
     }
 }
 export default Donation;

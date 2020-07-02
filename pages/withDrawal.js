@@ -52,7 +52,7 @@ class WithDrawal extends React.Component {
             alert('Existe esa cantidad en el cajero');
             let dataRequest = [];
             const { router } = this.props;
-            let idAccount = router.query.account;
+            let idAccount = router.query.id_accounts;
             this.openAnimation();
             let dataBalance = methodRequet(dataRequest,'balanceForAccount/','GET',idAccount);
             dataBalance.then((value) => {
@@ -91,7 +91,7 @@ class WithDrawal extends React.Component {
     }
     validatePassword = () =>{
         const { router } = this.props;
-        let idAccount = router.query.account;
+        let idAccount = router.query.id_accounts;
         this.openAnimation();
         let dataRequest = {
             'id_account':idAccount,
@@ -129,7 +129,7 @@ class WithDrawal extends React.Component {
                 alert('Se imprimio el voucher!');
             }
             const { router } = this.props;
-            let idAccount = router.query.account;
+            let idAccount = router.query.id_accounts;
             let idAtm = router.query.atm;
             let dataTransaction = {
                 "value_transaction":this.state.data.value_transaction.value,

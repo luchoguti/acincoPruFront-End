@@ -31,8 +31,8 @@ const AccountUP = (props) =>{
                 type_document={props.type_document}
                 bank={props.bank}
                 type_account={props.type_account}
-                id_account={props.id_account}
                 accountData={dataInitNew}
+                qureryURL={props.qureryURL}
             />
         </InitPage>
     )
@@ -54,9 +54,9 @@ AccountUP.getInitialProps = async (ctx) => {
         type_document:dataResp.data,
         bank:dataBank,
         type_account:dataTypeAccount.data,
-        id_account:ctx.query.account,
         account_association:ctx.query.account_association,
-        dataAccount: dataAccount.data
+        dataAccount: dataAccount.data,
+        qureryURL: ctx.query
     }
 }
 export default AccountUP;

@@ -49,24 +49,22 @@ const FormAccount = (props) => {
                     "number_identification":data.number_identification.value,
                     "banks": data.bank.value,
                     "type_account": data.type_account.value,
-                    "password_account": data.password_account.value
+                    "password_account": data.password_account.value,
+                    "state":false
                 }
                 let dataResultAccout = await methodRequet(dataAccount,'account ','POST','');
                 if(dataResultAccout){
                     let dataAccToAcc = {
-                        "account_origin":props.id_account,
+                        "account_origin":props.qureryURL.id_accounts,
                         "account_association":dataResultAccout.id_accounts
                     }
                     let acountToAcount = await methodRequet(dataAccToAcc,'accountToAccount','POST','');
                     if(acountToAcount){
                         alert('Se creo la cuenta exitosamente!');
                         setTimeout(() => {
-                            let queryData = {
-                                'account': props.id_account
-                            }
                             Router.push({
                                 pathname: '/account',
-                                query: queryData
+                                query: props.qureryURL
                             });
                         reStartDataInit(dataForm);
                         }, 3000);
@@ -91,12 +89,9 @@ const FormAccount = (props) => {
                 if(dataResultAccout){
                     alert('Se actualizo la cuenta exitosamente!');
                     setTimeout(() => {
-                        let queryData = {
-                            'account': props.id_account
-                        }
                         Router.push({
                             pathname: '/account',
-                            query: queryData
+                            query: props.qureryURL
                         });
                     reStartDataInit(dataForm);
                     }, 3000);

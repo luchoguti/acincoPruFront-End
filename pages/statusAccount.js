@@ -1,12 +1,7 @@
 
-import { useState } from 'react';
+
 import InitPage from '../components/InitPage';
-import { Container, Alert, ListGroup } from 'react-bootstrap';
-import DataMenu from '../data/menu.json';
-import {useRouter} from 'next/router';
 import Router from 'next/router';
-import {methodRequet} from '../utils/index';
-import ProgressAnimation from '../components/ProgressAnimation';
 import {API_BASE_URL} from '../config';
 
 
@@ -44,10 +39,10 @@ const statusAccount = (props) => {
 }
 
 statusAccount.getInitialProps = async (ctx) => {
-    const response = await fetch(`${API_BASE_URL}/transactionForAccountOrigin/${ctx.query.account}`);
+    const response = await fetch(`${API_BASE_URL}/transactionForAccountOrigin/${ctx.query.id_accounts}`);
     const dataResp = await response.json();
 
-    const respBalance = await fetch(`${API_BASE_URL}/balanceForAccount/${ctx.query.account}`);
+    const respBalance = await fetch(`${API_BASE_URL}/balanceForAccount/${ctx.query.id_accounts}`);
     const dataBalance = await respBalance.json();
     
     return {

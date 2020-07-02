@@ -10,8 +10,8 @@ const AccountCR = (props) =>{
                 type_document={props.type_document}
                 bank={props.bank}
                 type_account={props.type_account}
-                id_account={props.id_account}
                 accountData={accountData}
+                qureryURL={props.qureryURL}
             />
         </InitPage>
     )
@@ -30,7 +30,7 @@ AccountCR.getInitialProps = async (ctx) => {
         type_document:dataResp.data,
         bank:dataBank,
         type_account:dataTypeAccount.data,
-        id_account:ctx.query.account
+        qureryURL: ctx.query
     }
 }
 export default AccountCR;

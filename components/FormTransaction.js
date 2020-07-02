@@ -73,7 +73,7 @@ const FormTrasaction = (props) =>{
                 setTimeout(() => {
                     Router.push({
                         pathname: '/statusAccount',
-                        query:dataURL
+                        query:props.qureryURL
                     });
                 }, 6000);
                 reStartDataInit(dataForm);
@@ -82,7 +82,7 @@ const FormTrasaction = (props) =>{
                 setTimeout(() => {
                     Router.push({
                         pathname: '/statusAccount',
-                        query:dataURL
+                        query:props.qureryURL
                     });
                 }, 4000);
                 setShowProgress(false);
@@ -124,20 +124,25 @@ const FormTrasaction = (props) =>{
         }
     }
     const asociarCuenta = (e)=>{
-        let data = {
-            "account":props.id_account
-        }
         Router.push({
             pathname: '/account_cr',
-            query:data
+            query:props.qureryURL
         });
     }
-
+    const goToMenuAtm = () =>{
+        Router.push({
+            pathname: '/menuAtm',
+            query: props.qureryURL
+        });
+    }
     return (
         <div>
             <Card className="pt-3">
-                <Card.Header className="white-text text-start absolute-center  py-4">
+                <Card.Header className="white-text text-start d-flex justify-content-around">
                     <strong>Datos de {props.nameTrans} - # {props.number_account} - {props.name_bank}</strong>
+                    <button onClick={goToMenuAtm} type="button" className="btn btn-outline-info">
+                        <i className="fa fa-bars" aria-hidden="true"></i>
+                    </button>
                 </Card.Header>
                 <Card.Body className="px-lg-5 pt-1">
                     <Form.Row>

@@ -44,7 +44,7 @@
         },
         "password_account":{
             "var": "password_account",
-            "label": "Contaseña de Cuenta",
+            "label": "Contaseña de Cuenta default(1234)",
             "value": "",
             "type":"dataAccount",
             "validate": true
